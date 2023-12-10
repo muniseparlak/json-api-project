@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia&family=Roboto:ital,wght@0,100;0,400;0,500;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #EEE7DA;
+    width: 100%;
+} 
+
+.btn{
+    background-color: #88AB8E;
+}
+
+.card{
+    border-radius: 50px;
+    box-shadow: 10px 20px 30px grey;
+}
+
+.fa-solid {
+    font-size: 1.5rem;
+    color: #88AB8E;
+}
+
+
+.list-group li{
+    font-size: 0.9rem;
+    border: none;
+}
