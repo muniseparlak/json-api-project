@@ -1,5 +1,13 @@
 let row = document.querySelector(".row");
 
+async function getUsers() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  data.forEach(user => {
+    createCard(user);
+  });  
+}
+
 function createCard(user) {
   row.innerHTML += ` <div class="card p-3 m-5 " style='width:20rem'>
   <div class='card-title '> 
@@ -40,13 +48,7 @@ function createCard(user) {
 </div>`;
 }
 
-async function getUsers() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users');
-  const data = await response.json();
-  data.forEach(user => {
-    createCard(user);
-  });  
-}
+
 
 getUsers();
 
