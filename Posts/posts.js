@@ -19,7 +19,6 @@ function createCard(post) {
     
   </div>
   <div class="card-body ">
-    
      <p> ${post.body} 
      </p>
   </div>
