@@ -33,7 +33,9 @@ async function getUsers(userId) {
   }
 
 function createCard(post) {
-  row.innerHTML += ` <div class="card p-3 m-5 " style='width:20rem'>
+  row.innerHTML += `
+  
+    <div class="card p-3 m-5 " style='width:20rem'>
   <div class='card-title '> 
     <div class='user d-flex '>
       <i class="fa-solid fa-user pe-2 pt-1" ></i>
@@ -49,7 +51,10 @@ function createCard(post) {
      <p> ${post.body} 
      </p>
   </div>
-</div>`;
+</div>
+   
+   
+`;
 }
 
 
