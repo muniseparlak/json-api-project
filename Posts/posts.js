@@ -1,24 +1,20 @@
 let row = document.querySelector(".row");
 
 async function userPrompt(){
-  let userInput = prompt('Lütfen 1 ile 10 arasında bir sayı yazınız');
-  try {
-    let userId = parseInt(userInput);
-    if (userId <= 0 || userId > 10 || isNaN(userId) ) {
-      throw new Error('Geçersiz userId. Lütfen 1 ile 10 arasında bir sayı girin.');
-
-  }
-  
   const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('userId', userId);
-    window.history.replaceState(null, null, `?${urlParams.toString()}`);
+  let userId = urlParams.get("userId");
+  if (userId == null || userId == "" || userId == undefined) {
+    userId = Number(prompt('Lütfen 1 ile 10 arasında bir sayı yazınız'))
 
+    if (userId <= 0 || userId > 10 || isNaN(userId)) {
+      throw new Error('Geçersiz userId. Lütfen 1 ile 10 arasında bir sayı girin.');
+    } else {
+      await getUsers(userId);
+    }
+  }else{
     await getUsers(userId);
-  
-  } catch (error) {
-    alert(error)
   }
-}
+
 
 async function getUsers(userId) {
   try{
@@ -31,6 +27,10 @@ async function getUsers(userId) {
     console.error(error);
   }
   }
+
+}
+
+userPrompt()
 
 function createCard(post) {
   row.innerHTML += `
@@ -59,4 +59,3 @@ function createCard(post) {
 
 
 
-userPrompt()

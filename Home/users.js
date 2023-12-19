@@ -9,11 +9,15 @@ async function getUsers() {
 }
 
 function createCard(user) {
-  row.innerHTML += ` <div class="card p-3 m-5 " style='width:20rem'>
+  row.innerHTML += ` 
+
+  
+  <div class="card p-3 m-5" style='width:20rem'>
   <div class='card-title '> 
     <div class='user d-flex '>
+    <a href="/Posts/posts.html?userId=${user.id}">
       <i class="fa-solid fa-user pe-2 pt-1" ></i>
-       <h3 >${user.id}</h3>
+   
     </div>
     <h3 class='fw-bold'>${user.name} </h3>
     <h3>${user.username} </h3>
@@ -45,7 +49,10 @@ function createCard(user) {
       <li class="list-group-item">Website: ${user.website}</li>
     </div>
   </ul>
-</div>`;
+  </a>
+</div>
+
+`;
 }
 
 

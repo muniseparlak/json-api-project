@@ -57,13 +57,16 @@ button {
 
 .card{
     background-color: #d6d2eb;
-    border-radius: 50px;
-    border-radius: 50px;
-    box-shadow: 5px 10px 15px #7b5187;
- 
+    border-radius: 20px;
+    box-shadow: 5px 10px 15px #7b5187;  
  --bs-card-spacer-y: 10px;
     --bs-card-spacer-x: 0;
     
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
 }
 
 .fa-solid {
